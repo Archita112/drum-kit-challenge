@@ -11,7 +11,17 @@ for(let i = 0; i < 7; i++){
         //audio.play();
         var buttonInnerHTML = this.innerHTML;
 
-        switch(buttonInnerHTML){
+        makeSound(buttonInnerHTML);
+        
+})
+}
+
+document.addEventListener("keypress", function(event){
+    makeSound(event.key);
+});
+
+function makeSound(key){
+    switch(key){
             case "w":
             var audio = new Audio("sounds/tom-1.mp3");
             audio.play();
@@ -48,6 +58,5 @@ for(let i = 0; i < 7; i++){
             break;
 
             default: console.log(buttonInnerHTML);
-    }
-})
+}
 }
